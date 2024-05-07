@@ -1,5 +1,6 @@
 
 async function imp(text,template,replaceString){
+  replaceString = replaceString||'{{imp}}'
   let html = ''
   template = await _get(template)
   //console.log(template)
