@@ -9,6 +9,8 @@ imp is template importer
 
 ## let {html,blob} = await imp(body,template,replaceName) 
 ```
+import "https://hashsan.github.io/imp/imp.js"
+
 imp('<a href="#">test</a>',
     'https://hashsan.github.io/imp/test.html',
     '{{imp}}').then(d=>{
