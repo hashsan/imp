@@ -1,10 +1,25 @@
 # imp
 imp is template importer
 
-default replace
 
+## default replace
+```
+{{imp}}
 ```
 
-{{imp}}
+## let {html,blob} = await imp(body,template,replaceName) 
+```
+imp('<a href="#">test</a>',
+    'https://hashsan.github.io/imp/test.html',
+    '{{imp}}').then(d=>{
+  //d.html, d.blob
+
+  let iframe = document.createElement('iframe')
+  let url = URL.createObjectURL(d.blob)
+  iframe.onload = () =>URL.revokeObjectURL(url)
+  iframe.src = url
+  document.body.append(iframe)
+
+})
 
 ```
